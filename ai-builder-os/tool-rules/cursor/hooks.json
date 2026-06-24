@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "matcher": "docker|kubectl|python.*-m\\s+deploy|systemctl|supervisorctl|/opt/|\\.venv/bin/python|gunicorn|uvicorn|celery|migrate|makemigrations",
+        "command": "bash -lc 'printf \"%s\\n\" \"{\\\"permission\\\":\\\"ask\\\",\\\"user_message\\\":\\\"DEPLOYMENT_GATE: Review .ai/memory/frozen/deployment.yaml before running this command.\\\",\\\"agent_message\\\":\\\"This shell command looks deployment-related. Read .ai/memory/frozen/deployment.yaml this session. Use only listed paths, commands, and env vars. If the command is not listed, ask the user before proceeding.\\\"}\"'",
+        "failClosed": true
+      }
+    ]
+  }
+}

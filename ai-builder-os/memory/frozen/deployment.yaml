@@ -1,0 +1,64 @@
+version: 1
+updated_at: "YYYY-MM-DD"
+# FROZEN MEMORY — Deployment & Operations
+#
+# Update trigger: only when deployment infrastructure, environments,
+# or commit/push procedures change.
+#
+# Read at: start of every session, once.
+
+environments:
+  development:
+    setup: "FILL IN: e.g. docker compose up"
+    url: "FILL IN: e.g. http://localhost:3000"
+    notes: "FILL IN: any dev-specific gotchas"
+  staging:
+    setup: "FILL IN"
+    url: "FILL IN"
+    notes: ""
+  production:
+    url: "FILL IN"
+    notes: "FILL IN: e.g. auto-deployed on push to main"
+
+infrastructure:
+  hosting: "FILL IN: e.g. AWS ECS, Fly.io, Render, bare metal"
+  database: "FILL IN: e.g. PostgreSQL on RDS"
+  storage: "FILL IN: e.g. S3 for file uploads"
+  other: []  # FILL IN: any other infra pieces
+
+ci_cd:
+  trigger: "FILL IN: e.g. Push to main triggers GitHub Actions"
+  workflow_file: "FILL IN: e.g. .github/workflows/deploy.yml"
+  monitor: "FILL IN: e.g. GitHub Actions URL or Grafana link"
+
+secrets:
+  # List required env vars by name only — never their values.
+  required_env_vars:
+    - "FILL IN: e.g. DATABASE_URL"
+    - "FILL IN: e.g. SECRET_KEY"
+  where_stored: "FILL IN: e.g. .env file (not committed), Doppler, AWS Secrets Manager"
+
+operations:
+  commit_convention:
+    format: "<verb> <short description>"
+    language: English  # FILL IN: English or your team's language
+    examples:
+      - "Add user authentication flow"
+      - "Fix null pointer in payment handler"
+      - "Update API rate limit to 100 req/min"
+    rules:
+      - "No emojis in commit messages"
+      - "First line under 72 characters"
+      - "When AI-assisted, append: Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+      - "Stage specific files by name — never git add -A or git add ."
+
+  commit_and_push_sop:
+    description: >
+      Fixed procedure for committing and pushing. AI must follow this exactly —
+      do not reason about it or improvise the steps.
+    steps:
+      - "git status — verify only intended files are changed"
+      - "git diff -- <files> — confirm changes look correct"
+      - "git add <file1> <file2> ... — stage specific files by name"
+      - "git commit -m '...' — use commit_convention format above"
+      - "git push origin main"  # FILL IN: adjust branch name if needed

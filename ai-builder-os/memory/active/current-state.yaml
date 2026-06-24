@@ -1,0 +1,87 @@
+version: 1
+updated_at: "YYYY-MM-DD"  # AI updates this after every task
+# ACTIVE MEMORY — Current Project State
+#
+# Update trigger: AI updates this at the end of every task.
+# Human reviews but does not need to manually maintain it.
+#
+# Read at: every task start, after frozen/ memory.
+
+current_iteration:
+  goal: "FILL IN: what are we trying to achieve this iteration?"
+  started: "YYYY-MM-DD"
+  target_completion: "YYYY-MM-DD"
+  milestone: "FILL IN: e.g. v1.0 MVP"
+  repo_role: "FILL IN: e.g. app repo, framework repo, product + factory repo"
+
+in_progress:
+  # Requirements currently being worked on.
+  # AI updates status after each task.
+  #
+  # - id: REQ-001
+  #   title: "Add user profile page"
+  #   status: "in_progress"   # pending | in_progress | blocked | done
+  #   session: "2026-05-13-user-profile"
+  #   blocker: null            # or describe what's blocking
+
+  []  # Remove and add real entries
+
+recently_completed:
+  # Last 5 completed items. Older ones live in git history + task-log/.
+  #
+  # - id: REQ-000
+  #   title: "Setup project structure"
+  #   completed: "YYYY-MM-DD"
+  #   task_log: ".ai/memory/task-log/YYYY-MM-DD-setup.md"
+
+  []  # Remove and add real entries
+
+work_items:
+  # Cross-tool work item records. One file per active requirement, bug, release,
+  # or handoff-worthy unit of work.
+  #
+  # - id: WI-2026-0001
+  #   type: "change_request"   # bootstrap | new_product | change_request | bug_fix | implementation | release_review | deployment | handoff
+  #   status: "approval_waiting"   # intake | analysis | approval_waiting | implementation | verification | blocked | closed
+  #   path: ".ai/memory/active/work-items/WI-2026-0001-change-request.md"
+  #   owner: "Code Agent"
+
+  []  # Remove and add real entries
+
+pending_confirmations:
+  # Explicit human decisions blocking the next stage.
+  #
+  # - gate: "Gate 3 — Plan Gate"
+  #   item: "WI-2026-0001"
+  #   decision: "Approve files and behavior changes before implementation"
+
+  []  # Remove and add real entries
+
+known_issues:
+  # Active bugs and gotchas. Remove entries when resolved.
+  # These are live issues — historical issues live in git history.
+  #
+  # - id: KI-0001
+  #   title: "Empty admin list allows all users admin access"
+  #   severity: high   # low | medium | high
+  #   location: "src/auth/middleware.py:42"
+  #   detail: >
+  #     If ADMIN_IDS env var is not set, the check passes for everyone.
+  #     Any new admin-gated feature must assert admin_ids is non-empty.
+  #   status: "open"   # open | in-progress | resolved
+
+  []  # Remove and add real entries
+
+blockers:
+  # Things blocking progress right now.
+  #
+  # - description: "Waiting for API credentials from vendor"
+  #   affects: "REQ-002"
+  #   since: "YYYY-MM-DD"
+
+  []  # Remove and add real entries
+
+last_session:
+  date: "YYYY-MM-DD"
+  task_log: ".ai/memory/task-log/YYYY-MM-DD-slug.md"
+  summary: "FILL IN: one sentence on what happened last session"

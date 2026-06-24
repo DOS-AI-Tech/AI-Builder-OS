@@ -1,0 +1,105 @@
+version: 1
+updated_at: "YYYY-MM-DD"
+# SLOW MEMORY — File Index
+#
+# Update trigger: at each milestone or when file ownership shifts.
+# Do NOT update mid-task. Surface the observation; human decides when to update.
+#
+# Read at: after reading frozen/ and active/, find the entry matching your task area.
+# Read ONLY the files listed under read_first for your area. Do not scan the repo.
+
+read_map:
+
+  # FILL IN: Replace examples below with your project's actual change areas.
+  # One entry per distinct functional area. More specific is better.
+  #
+  # Schema:
+  #   <area_key>:
+  #     description: "What this area covers — be specific about scope edges"
+  #     read_first:
+  #       - path/to/file.py      # why it's here
+  #     tests:
+  #       - tests/test_this.py
+  #     docs:                    # optional: relevant spec/design docs
+  #       - docs/features/this.md
+  #     validate:                # commands to run after changes in this area
+  #       - pytest tests/test_this.py -v
+  #     last_updated: "YYYY-MM-DD"   # date this entry was last verified accurate
+
+  change_example_feature:
+    description: "FILL IN: What user-visible behavior does this area control?"
+    read_first:
+      - src/feature/handler.py        # FILL IN: replace with real path + comment
+      - src/feature/models.py         # FILL IN
+    tests:
+      - tests/test_feature.py         # FILL IN
+    validate:
+      - pytest tests/test_feature.py -v   # FILL IN
+    last_updated: "YYYY-MM-DD"
+
+  change_database_layer:
+    description: "FILL IN: All database queries and schema migrations."
+    read_first:
+      - src/db/database.py            # FILL IN
+      - src/db/migrations/            # FILL IN
+    tests:
+      - tests/test_db.py              # FILL IN
+    validate:
+      - pytest tests/test_db.py -v    # FILL IN
+    last_updated: "YYYY-MM-DD"
+
+  change_config_or_env:
+    description: "FILL IN: Configuration loading, environment variables, secrets handling."
+    read_first:
+      - src/config/loader.py          # FILL IN
+      - config/config.example.json    # FILL IN
+    tests: []
+    validate:
+      - python -c "from src.config import loader; loader.load()"  # FILL IN
+    last_updated: "YYYY-MM-DD"
+
+  fix_bug:
+    description: >
+      Use for any bug fix task. Read these files to understand the affected area
+      before proposing a fix plan. Narrow read_first to files most likely
+      involved — update this entry per bug, not generically.
+    read_first:
+      - .ai/memory/active/current-state.yaml    # known_issues and in_progress state
+      - .ai/memory/frozen/architecture.yaml     # key_patterns and system boundaries
+    docs:
+      - .ai/workflows/bug-fix.md                # regression check and memory update checklist in Phase 7
+    validate:
+      - "FILL IN: pytest / lint / type-check for the affected area"
+    last_updated: "YYYY-MM-DD"
+
+  change_request:
+    description: >
+      Use when evaluating a change request or user feedback.
+      Read these to understand impact before recommending a decision.
+      Do not implement — analysis only at this stage.
+    read_first:
+      - .ai/memory/frozen/architecture.yaml
+      - .ai/memory/active/current-state.yaml
+    docs:
+      - .ai/workflows/change-request.md         # classification, impact assessment, and recommendation phases
+    validate: []
+    last_updated: "YYYY-MM-DD"
+
+  change_skills:
+    description: >
+      Use when adding, modifying, or globally installing framework or paid skills.
+      Every skill directory contains SKILL.md. Paid skills require the global
+      ai-builder-os host and are updated only by their explicit installer.
+    read_first:
+      - installer/agents.conf
+      - installer/install.sh
+      - installer/install-skill.sh
+      - ai-builder-os/skills/SKILL-FORMAT.md
+    validate:
+      - "Review tier and requires fields in SKILL.md"
+      - "bash installer/test-installation.sh"
+    last_updated: "2026-06-23"
+
+  # Add more areas as the project grows. Good candidates:
+  #   change_auth_flow, change_api_endpoints, change_worker_jobs,
+  #   change_notification_system, change_payment_flow, etc.

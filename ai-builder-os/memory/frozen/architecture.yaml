@@ -1,0 +1,87 @@
+version: 1
+updated_at: "YYYY-MM-DD"
+# FROZEN MEMORY — Architecture
+#
+# Update trigger: only when architecture decisions, system boundaries,
+# or tech stack change. Add an ADR entry to decisions[] when you do.
+#
+# Read at: start of every session, once.
+
+project:
+  name: "YOUR_PROJECT_NAME"       # FILL IN
+  purpose: >
+    # FILL IN: One paragraph. What does this project do, who uses it,
+    # and what problem does it solve?
+  primary_language: "Python 3.x"  # FILL IN: e.g. TypeScript, Go, Python 3.11+
+  runtime: "Docker"                # FILL IN: e.g. Docker, Node.js, bare metal
+
+architecture_overview:
+  summary: >
+    # FILL IN: 2-4 sentences. How is the code structured? What are the main
+    # moving parts and how do they relate? What does a new engineer need to
+    # know on day 1 before reading any code?
+
+  main_components:
+    # FILL IN: One entry per major component/package/service.
+    - name: "component-name"
+      path: "src/component/"        # path relative to repo root
+      responsibility: >
+        # FILL IN: What does this component own? What must it NOT do?
+      important_files:
+        - src/component/main.py     # FILL IN: key files, one-line comment each
+        - src/component/models.py   # FILL IN
+
+    # - name: "another-component"
+    #   path: "src/other/"
+    #   responsibility: >
+    #     ...
+    #   important_files:
+    #     - src/other/index.ts
+
+system_boundaries:
+  in_scope:
+    # FILL IN: What is this system responsible for?
+    - "Example: user authentication and session management"
+    - "Example: REST API for mobile clients"
+
+  out_of_scope:
+    # FILL IN: What explicitly does NOT belong here?
+    - "Example: payment processing (handled by external service)"
+    - "Example: analytics data warehouse"
+
+  forbidden_crossings:
+    # FILL IN: Hard module import rules. AI must not violate these.
+    - "FILL IN: e.g. services/* must not import from handlers/*"
+    - "Secrets must not be committed to git"
+
+key_patterns:
+  # FILL IN: Patterns AI must understand before making changes.
+  # Knowing these prevents AI from introducing inconsistencies.
+  #
+  # auth_check:
+  #   summary: >
+  #     All admin operations use require_admin() decorator at src/auth/decorators.py:15.
+  #     Never bypass this with manual user_id checks.
+  #   files:
+  #     - src/auth/decorators.py
+  #
+  # config_loading:
+  #   summary: >
+  #     Config is loaded once at startup via src/config/loader.py.
+  #     Runtime overrides are in the runtime_config table, not in files.
+  #   files:
+  #     - src/config/loader.py
+
+decisions:
+  # Architecture Decision Records — WHY decisions were made.
+  # Knowing the WHY prevents AI from accidentally undoing them.
+  #
+  # - id: ADR-0001
+  #   title: SQLite as sole database (no Redis, no PostgreSQL)
+  #   status: accepted   # accepted | deprecated | superseded
+  #   date: "2026-01-15"
+  #   summary: >
+  #     Chosen for zero-dependency deployment. Single-writer workload fits
+  #     SQLite's concurrency model. Revisit if write throughput exceeds 100 req/s.
+
+  []  # Remove this and add real entries
