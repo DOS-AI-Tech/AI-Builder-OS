@@ -1,5 +1,7 @@
 **English** · [简体中文](i18n/README.zh-CN.md) · [User Guide](user-guide/index.html)
 
+![AI Builder OS — reliable AI software delivery](assets/ai-builder-os-banner.png)
+
 # AI Builder Operating System
 
 A zero-dependency operating system that turns capable AI Code Agents into reliable software delivery systems.
