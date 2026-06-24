@@ -2,12 +2,12 @@
 
 # AI Builder Operating System
 
-一套免费、零依赖的 AI 软件交付操作系统。
+一套零依赖的 AI 软件交付操作系统。
 只需全局安装一次，即可让 Claude Code、Codex、GitHub Copilot、Cursor 和 Qoder 共享同一套项目记忆、工作流和人工审批 Gate。
 
 ## 快速开始
 
-### 1. 全局安装免费框架
+### 1. 全局安装 AI Builder OS
 
 ```bash
 git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git ~/ai-builder-os
@@ -48,9 +48,9 @@ bash ~/ai-builder-os/installer/init.sh /path/to/project
 
 目标很简单：让人保持控制，同时不必在每次会话中重新解释项目。
 
-## 免费内容
+## 内置能力
 
-免费框架包含工作流路由、记忆规范、输出模板、项目初始化，以及五个基础技能：
+AI Builder OS 包含工作流路由、记忆规范、输出模板、项目初始化，以及五个内置技能：
 
 | 技能 | 职责 |
 |------|------|
@@ -64,7 +64,7 @@ bash ~/ai-builder-os/installer/init.sh /path/to/project
 
 ```text
 为每个选中的 Agent 全局安装一次
-└── AI Builder OS 核心 + 免费基础技能
+└── AI Builder OS 核心 + 内置技能
                       │
                       ▼
 每个项目初始化一次
@@ -76,19 +76,11 @@ bash ~/ai-builder-os/installer/init.sh /path/to/project
 
 静态框架能力放在全局；业务上下文和工作历史留在项目内，通过 Git 审查和版本管理。
 
-## 付费技能包
+## 高级技能包
 
-高级技能包与免费框架分开销售、分开交付，用于增加专业领域能力。
+高级技能包为 AI Builder OS 扩展领域发现、业务建模、技术分析、方案设计和专家评审等专业能力。
 
-```bash
-bash ~/ai-builder-os/installer/install-skill.sh <skill-name> /path/to/purchased-pack
-```
-
-```powershell
-& "$HOME\ai-builder-os\installer\install-skill.ps1" <skill-name> "C:\path\to\purchased-pack"
-```
-
-免费框架是强制依赖。如果没有任何 Agent 安装免费框架，付费技能安装会终止。付费技能不会包含或修改免费框架。
+下载：—
 
 ## 文档
 
@@ -97,7 +89,7 @@ bash ~/ai-builder-os/installer/install-skill.sh <skill-name> /path/to/purchased-
 - [技能格式规范](../ai-builder-os/skills/SKILL-FORMAT.md)
 - [工作流参考](../ai-builder-os/workflows/README.md)
 
-升级免费框架：拉取仓库更新后运行 `installer/update.sh` 或 `installer/update.ps1`。项目记忆和付费技能不会被修改。
+升级 AI Builder OS：拉取仓库更新后运行 `installer/update.sh` 或 `installer/update.ps1`。项目记忆不会被修改。
 
 ## 支持的 Agent
 
@@ -105,4 +97,4 @@ bash ~/ai-builder-os/installer/install-skill.sh <skill-name> /path/to/purchased-
 
 ## 许可与贡献
 
-免费框架开源，欢迎提交 Issue 和 Pull Request。付费技能包内容不得进入公共框架仓库。
+AI Builder OS 采用 MIT License，欢迎提交 Issue 和 Pull Request。

@@ -7,16 +7,16 @@
 <a href="#overview">概述</a><a href="#install">全局安装</a><a href="#init">项目初始化</a><a href="#daily">日常使用</a><a href="#flows">工作流与 Gate</a><a href="#memory">记忆与领域</a><a href="#skills">技能</a><a href="#upgrade">升级</a><a href="#help">故障排查</a></nav><main>
 <p><a href="index.html">English</a> · <a href="../i18n/README.zh-CN.md">README</a></p>
 <h1>使用指南</h1><p>全局安装框架，每个项目只保存自己的上下文。</p>
-<h2 id="overview">1. 概述</h2><p>AI Builder OS 让多个编码 Agent 使用相同的工作流、记忆和人工审批规则。免费框架包含核心能力和五个基础技能。</p>
+<h2 id="overview">1. 概述</h2><p>AI Builder OS 让多个编码 Agent 使用相同的工作流、记忆和人工审批规则，包含核心能力和五个内置技能。</p>
 <h2 id="install">2. 全局安装</h2><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git ~/ai-builder-os
 bash ~/ai-builder-os/installer/install.sh</code></pre><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git "$HOME\ai-builder-os"
-& "$HOME\ai-builder-os\installer\install.ps1"</code></pre><p>选择 Claude Code、Codex、Copilot、Cursor 或 Qoder。无需 Node/npm。</p>
+&amp; "$HOME\ai-builder-os\installer\install.ps1"</code></pre><p>选择 Claude Code、Codex、Copilot、Cursor 或 Qoder。无需 Node/npm。</p>
 <h2 id="init">3. 项目初始化</h2><pre><code>bash ~/ai-builder-os/installer/init.sh /path/to/project</code></pre><p>只创建 .ai/memory、domain、project_docs、Dashboard 和薄适配器；不会复制全局技能。</p>
 <h2 id="daily">4. 日常使用</h2><ol><li>打开已初始化的项目并描述一个任务。</li><li>Agent 读取项目记忆并选择工作流。</li><li>检查并确认 Gate。</li><li>完成后检查 project_docs、测试结果和任务日志。</li></ol>
 <h2 id="flows">5. 工作流与 Gate</h2><table><tr><th>场景</th><th>流程</th></tr><tr><td>新产品</td><td>定义 → 范围 → 架构 → 计划 → 实现 → 测试 → 交付</td></tr><tr><td>变更</td><td>分析 → 决策 Gate → 计划 Gate → 实现 → 验证</td></tr><tr><td>Bug</td><td>复现 → 根因 → 修复计划 → 回归测试</td></tr></table>
 <h2 id="memory">6. 记忆、领域和输出</h2><table><tr><td><code>.ai/memory/</code></td><td>架构、部署、当前状态、工作项和日志</td></tr><tr><td><code>domain/</code></td><td>项目专属业务知识</td></tr><tr><td><code>project_docs/</code></td><td>需求、架构、计划和测试证据</td></tr></table>
-<h2 id="skills">7. 基础与付费技能</h2><p>基础技能随免费框架全局安装。付费技能包独立交付，并强制依赖免费框架。</p><pre><code>bash ~/ai-builder-os/installer/install-skill.sh &lt;skill-name&gt; /path/to/purchased-pack</code></pre>
-<h2 id="upgrade">8. 升级</h2><pre><code>cd ~/ai-builder-os && git pull
-bash installer/update.sh</code></pre><p>全局框架更新不会修改项目记忆或付费技能。</p>
-<h2 id="help">9. 故障排查</h2><h3>Agent 看不到框架</h3><p>重新运行全局安装并选择该 Agent，然后重启 Agent。</p><h3>付费技能无法安装</h3><p>先确认同一个 Agent 已安装免费 ai-builder-os 核心。</p><h3>项目没有上下文</h3><p>运行项目初始化，并填写 frozen memory 和 domain 资料。</p>
+<h2 id="skills">7. 内置技能与高级技能包</h2><p>五个内置技能覆盖需求、架构、项目管理、测试和部署。高级技能包扩展领域发现、业务建模、技术分析、方案设计和专家评审等专业能力。</p><p>下载：—</p>
+<h2 id="upgrade">8. 升级</h2><pre><code>cd ~/ai-builder-os &amp;&amp; git pull
+bash installer/update.sh</code></pre><p>全局更新不会修改项目记忆。</p>
+<h2 id="help">9. 故障排查</h2><h3>Agent 看不到框架</h3><p>重新运行全局安装并选择该 Agent，然后重启 Agent。</p><h3>项目没有上下文</h3><p>运行项目初始化，并填写 frozen memory 和 domain 资料。</p>
 </main></body></html>

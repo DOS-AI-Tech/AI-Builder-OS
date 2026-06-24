@@ -2,12 +2,12 @@
 
 # AI Builder Operating System
 
-A free, zero-dependency operating system for reliable AI-assisted software delivery.
+A zero-dependency operating system for reliable AI-assisted software delivery.
 Install it once across Claude Code, Codex, GitHub Copilot, Cursor, and Qoder—then let every Agent work from the same project memory, workflow, and human approval gates.
 
 ## Quickstart
 
-### 1. Install the free framework globally
+### 1. Install AI Builder OS globally
 
 ```bash
 git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git ~/ai-builder-os
@@ -52,7 +52,7 @@ The goal is simple: keep humans in control without having to re-explain the proj
 
 ## What Is Included
 
-The free framework contains shared workflow routing, memory conventions, output templates, project initialization, and five basic skills:
+AI Builder OS includes shared workflow routing, memory conventions, output templates, project initialization, and five built-in skills:
 
 | Skill | Responsibility |
 |-------|----------------|
@@ -66,7 +66,7 @@ The free framework contains shared workflow routing, memory conventions, output 
 
 ```text
 Installed once for each selected Agent
-└── AI Builder OS core + free basic skills
+└── AI Builder OS core + built-in skills
                       │
                       ▼
 Initialized once per project
@@ -78,19 +78,11 @@ Initialized once per project
 
 Static framework behavior is global. Business context and work history stay inside the project, where teams can review and version them with Git.
 
-## Paid Skill Packs
+## Advanced Skill Packs
 
-Advanced skill packs are sold and delivered separately from the free framework. They add specialized domain expertise while using the same host workflows and project memory.
+Advanced Skill Packs extend AI Builder OS with specialized capabilities for domain discovery, business modeling, technical analysis, solution design, and expert review workflows.
 
-```bash
-bash ~/ai-builder-os/installer/install-skill.sh <skill-name> /path/to/purchased-pack
-```
-
-```powershell
-& "$HOME\ai-builder-os\installer\install-skill.ps1" <skill-name> "C:\path\to\purchased-pack"
-```
-
-The free framework is mandatory. If it is not installed for any Agent, paid-skill installation stops. Paid skills do not contain or modify the free framework.
+Download: —
 
 ## Documentation
 
@@ -99,7 +91,7 @@ The free framework is mandatory. If it is not installed for any Agent, paid-skil
 - [Skill format reference](ai-builder-os/skills/SKILL-FORMAT.md)
 - [Workflow reference](ai-builder-os/workflows/README.md)
 
-Upgrade the free framework by pulling the repository and running `installer/update.sh` or `installer/update.ps1`. Project memory and paid skills remain untouched.
+Upgrade AI Builder OS by pulling the repository and running `installer/update.sh` or `installer/update.ps1`. Project memory remains untouched.
 
 ## Supported Agents
 
@@ -107,4 +99,4 @@ Claude Code, OpenAI Codex, GitHub Copilot, Cursor, and Qoder are supported throu
 
 ## License and Contributing
 
-The framework is free and open source. Issues and pull requests are welcome. Keep paid skill-pack content outside the public framework repository.
+AI Builder OS is released under the MIT License. Issues and pull requests are welcome.
