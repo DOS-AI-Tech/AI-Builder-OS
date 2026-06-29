@@ -1,8 +1,8 @@
 ---
 name: requirements-analyst
-description: Define products, MVP scope, acceptance criteria, and change impact under AI Builder OS gates.
+description: Define products, MVP scope, acceptance criteria, and change impact under AI Coding OS gates.
 tier: basic
-requires: [ai-builder-os]
+requires: [ai-coding-os]
 version: 1.1
 ---
 

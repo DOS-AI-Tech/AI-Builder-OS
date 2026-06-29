@@ -1,8 +1,8 @@
 ---
 name: architect
-description: Design and review technical architecture, ADRs, boundaries, and delivery-appropriate stacks under AI Builder OS.
+description: Design and review technical architecture, ADRs, boundaries, and delivery-appropriate stacks under AI Coding OS.
 tier: basic
-requires: [ai-builder-os]
+requires: [ai-coding-os]
 version: 1.2
 ---
 

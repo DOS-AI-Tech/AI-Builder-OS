@@ -2,7 +2,7 @@
 name: deployment-engineer
 description: Plan and verify safe deployment using project-approved commands, checks, and rollback procedures.
 tier: basic
-requires: [ai-builder-os]
+requires: [ai-coding-os]
 version: 1.2
 ---
 

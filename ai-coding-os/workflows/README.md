@@ -1,4 +1,4 @@
-# AI Builder OS Workflow Layer
+# AI Coding OS Workflow Layer
 
 These files define the company-level workflow system installed into every governed project.
 They are the source of truth for how work moves across:

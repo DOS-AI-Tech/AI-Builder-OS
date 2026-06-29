@@ -3,7 +3,7 @@
 <!-- Replace [PROJECT NAME] with your project name. -->
 <!-- Add one sentence describing what this project does. -->
 
-This project uses AI Builder Operating System as a company-level AI delivery layer.
+This project uses AI Coding Operating System as a company-level AI delivery layer.
 The workflow system is tool-agnostic. Claude Code, Codex, Copilot, Cursor, and
 future AI IDEs all share the same memory files, work-item records, and stage gates.
 

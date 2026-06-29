@@ -1,6 +1,6 @@
 # Changelog
 
-All notable public changes to AI Builder OS are documented here.
+All notable public changes to AI Coding OS are documented here.
 
 ## 3.0.0 — 2026-06-24
 

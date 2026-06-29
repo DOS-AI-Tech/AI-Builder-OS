@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# Zero-dependency global installer for AI Builder Operating System.
+# Zero-dependency global installer for AI Coding Operating System.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-SOURCE="$REPO_DIR/ai-builder-os"
+SOURCE="$REPO_DIR/ai-coding-os"
 CONF="$SCRIPT_DIR/agents.conf"
-ROOT="${AIBOS_HOME:-$HOME/.ai-builder-os}"
+ROOT="${AICOS_HOME:-$HOME/.ai-coding-os}"
 VERSION="$(cat "$SOURCE/VERSION")"
 
-[[ -f "$CONF" && -d "$SOURCE" ]] || { echo "ERROR: incomplete AI Builder OS package."; exit 1; }
-echo "AI Builder OS $VERSION — global installation"
+[[ -f "$CONF" && -d "$SOURCE" ]] || { echo "ERROR: incomplete AI Coding OS package."; exit 1; }
+echo "AI Coding OS $VERSION — global installation"
 echo "Select the Agents that should receive the free framework and basic skills."
 
 selected=()
@@ -28,9 +28,9 @@ cp -R "$SOURCE/." "$ROOT/framework.new/"
 rm -rf "$ROOT/framework"
 mv "$ROOT/framework.new" "$ROOT/framework"
 
-core="$ROOT/skills/ai-builder-os"
+core="$ROOT/skills/ai-coding-os"
 rm -rf "$core"
-cp -R "$SOURCE/skills/ai-builder-os" "$core"
+cp -R "$SOURCE/skills/ai-coding-os" "$core"
 mkdir -p "$core/references" "$core/assets" "$core/scripts"
 cp -R "$SOURCE/workflows" "$core/references/workflows"
 cp -R "$SOURCE/templates" "$core/references/templates"
@@ -51,7 +51,7 @@ for item in "${selected[@]}"; do
   IFS='|' read -r id label rel <<< "$item"
   dest="$HOME/$rel"
   mkdir -p "$dest"
-  for name in ai-builder-os "${basic[@]}"; do
+  for name in ai-coding-os "${basic[@]}"; do
     rm -rf "$dest/$name"
     cp -R "$ROOT/skills/$name" "$dest/$name"
   done

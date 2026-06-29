@@ -3,8 +3,8 @@
 $ErrorActionPreference = 'Stop'
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoDir = Split-Path -Parent $ScriptDir
-$Source = Join-Path $RepoDir 'ai-builder-os'
-$Root = if ($env:AIBOS_HOME) { $env:AIBOS_HOME } else { Join-Path $HOME '.ai-builder-os' }
+$Source = Join-Path $RepoDir 'ai-coding-os'
+$Root = if ($env:AICOS_HOME) { $env:AICOS_HOME } else { Join-Path $HOME '.ai-coding-os' }
 $Version = (Get-Content (Join-Path $Source 'VERSION') -Raw).Trim()
 $selected = @()
 Get-Content (Join-Path $ScriptDir 'agents.conf') | Where-Object { $_ -and -not $_.StartsWith('#') } | ForEach-Object {
@@ -14,9 +14,9 @@ Get-Content (Join-Path $ScriptDir 'agents.conf') | Where-Object { $_ -and -not $
 if ($selected.Count -eq 0) { Write-Output 'No Agent selected. Aborted.'; exit 1 }
 New-Item -ItemType Directory -Force -Path $Root,(Join-Path $Root 'skills') | Out-Null
 $frameworkDest=Join-Path $Root 'framework'; if(Test-Path $frameworkDest){Remove-Item $frameworkDest -Recurse -Force}; Copy-Item $Source $frameworkDest -Recurse
-$names = @('ai-builder-os','requirements-analyst','architect','project-manager','test-engineer','deployment-engineer')
+$names = @('ai-coding-os','requirements-analyst','architect','project-manager','test-engineer','deployment-engineer')
 foreach ($name in $names) { $d=Join-Path $Root "skills\$name"; if(Test-Path $d){Remove-Item $d -Recurse -Force}; Copy-Item (Join-Path $Source "skills\$name") $d -Recurse }
-$core = Join-Path $Root 'skills\ai-builder-os'
+$core = Join-Path $Root 'skills\ai-coding-os'
 New-Item -ItemType Directory -Force -Path (Join-Path $core 'references'),(Join-Path $core 'assets'),(Join-Path $core 'scripts') | Out-Null
 Copy-Item (Join-Path $Source 'workflows') (Join-Path $core 'references\workflows') -Recurse -Force
 Copy-Item (Join-Path $Source 'templates') (Join-Path $core 'references\templates') -Recurse -Force

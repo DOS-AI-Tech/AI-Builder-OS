@@ -1,8 +1,8 @@
 ---
 name: test-engineer
-description: Design traceable test plans, execute regression checks, and verify AI Builder OS acceptance criteria.
+description: Design traceable test plans, execute regression checks, and verify AI Coding OS acceptance criteria.
 tier: basic
-requires: [ai-builder-os]
+requires: [ai-coding-os]
 version: 1.1
 ---
 

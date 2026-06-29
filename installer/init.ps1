@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 $ErrorActionPreference='Stop'
-$ScriptDir=Split-Path -Parent $MyInvocation.MyCommand.Path; $Source=Join-Path (Split-Path -Parent $ScriptDir) 'ai-builder-os'
-$Target=if($args.Count){(Resolve-Path $args[0]).Path}else{(Get-Location).Path}; $Root=if($env:AIBOS_HOME){$env:AIBOS_HOME}else{Join-Path $HOME '.ai-builder-os'}
+$ScriptDir=Split-Path -Parent $MyInvocation.MyCommand.Path; $Source=Join-Path (Split-Path -Parent $ScriptDir) 'ai-coding-os'
+$Target=if($args.Count){(Resolve-Path $args[0]).Path}else{(Get-Location).Path}; $Root=if($env:AICOS_HOME){$env:AICOS_HOME}else{Join-Path $HOME '.ai-coding-os'}
 if(-not(Test-Path (Join-Path $Root 'VERSION'))){Write-Output 'ERROR: install the free global framework first.'; exit 1}
 function Copy-New($src,$dst){$parent=Split-Path -Parent $dst; New-Item -ItemType Directory -Force -Path $parent|Out-Null; if(-not(Test-Path $dst)){Copy-Item $src $dst}}
 Copy-New (Join-Path $Source 'memory\frozen\architecture.yaml') (Join-Path $Target '.ai\memory\frozen\architecture.yaml')

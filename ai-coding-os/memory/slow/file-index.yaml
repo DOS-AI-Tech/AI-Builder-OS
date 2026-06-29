@@ -89,12 +89,12 @@ read_map:
     description: >
       Use when adding, modifying, or globally installing framework or paid skills.
       Every skill directory contains SKILL.md. Paid skills require the global
-      ai-builder-os host and are updated only by their explicit installer.
+      ai-coding-os host and are updated only by their explicit installer.
     read_first:
       - installer/agents.conf
       - installer/install.sh
       - installer/install-skill.sh
-      - ai-builder-os/skills/SKILL-FORMAT.md
+      - ai-coding-os/skills/SKILL-FORMAT.md
     validate:
       - "Review tier and requires fields in SKILL.md"
       - "bash installer/test-installation.sh"

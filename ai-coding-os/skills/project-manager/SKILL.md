@@ -1,8 +1,8 @@
 ---
 name: project-manager
-description: Orchestrate AI Builder OS phases, document gates, work items, and delivery handoffs.
+description: Orchestrate AI Coding OS phases, document gates, work items, and delivery handoffs.
 tier: basic
-requires: [ai-builder-os]
+requires: [ai-coding-os]
 version: 2.1
 ---
 # Role: Project Manager

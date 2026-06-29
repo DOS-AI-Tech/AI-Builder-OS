@@ -2,9 +2,9 @@
 # Lightweight per-project initialization. Global skills are not copied here.
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE="$(cd "$SCRIPT_DIR/.." && pwd)/ai-builder-os"
+SOURCE="$(cd "$SCRIPT_DIR/.." && pwd)/ai-coding-os"
 TARGET="${1:-$(pwd)}"; TARGET="$(cd "$TARGET" && pwd)"
-[[ -f "${AIBOS_HOME:-$HOME/.ai-builder-os}/VERSION" ]] || { echo "ERROR: install the free global framework first."; exit 1; }
+[[ -f "${AICOS_HOME:-$HOME/.ai-coding-os}/VERSION" ]] || { echo "ERROR: install the free global framework first."; exit 1; }
 mkdir -p "$TARGET/.ai/memory/frozen" "$TARGET/.ai/memory/slow" "$TARGET/.ai/memory/active/work-items" "$TARGET/.ai/memory/task-log" "$TARGET/domain" "$TARGET/project_docs"
 copy_new() { [[ -e "$2" ]] || cp "$1" "$2"; }
 copy_new "$SOURCE/memory/frozen/architecture.yaml" "$TARGET/.ai/memory/frozen/architecture.yaml"
@@ -24,5 +24,5 @@ while IFS='|' read -r id rel version; do
     cursor) mkdir -p "$TARGET/.cursor/rules"; copy_new "$SOURCE/tool-rules/cursor/workflow-governance.mdc" "$TARGET/.cursor/rules/workflow-governance.mdc" ;;
     qoder) mkdir -p "$TARGET/.qoder/rules"; copy_new "$SOURCE/tool-rules/qoder/workflow-governance.md" "$TARGET/.qoder/rules/workflow-governance.md" ;;
   esac
-done < "${AIBOS_HOME:-$HOME/.ai-builder-os}/install-state.conf"
+done < "${AICOS_HOME:-$HOME/.ai-coding-os}/install-state.conf"
 echo "✓ Project initialized at $TARGET (global skills were not copied)."

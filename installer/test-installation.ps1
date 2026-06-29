@@ -8,9 +8,9 @@ foreach ($line in $agents) {
   $parts = $line -split '\|'
   if ($parts.Count -ne 4) { throw "Invalid agents.conf line: $line" }
 }
-$skills = @('ai-builder-os','requirements-analyst','architect','project-manager','test-engineer','deployment-engineer')
+$skills = @('ai-coding-os','requirements-analyst','architect','project-manager','test-engineer','deployment-engineer')
 foreach ($name in $skills) {
-  $file = Join-Path $RepoDir "ai-builder-os\skills\$name\SKILL.md"
+  $file = Join-Path $RepoDir "ai-coding-os\skills\$name\SKILL.md"
   if (-not (Test-Path $file)) { throw "Missing $file" }
   $text = Get-Content $file -Raw
   if ($text -notmatch '(?m)^name:' -or $text -notmatch '(?m)^description:') { throw "Invalid skill: $file" }

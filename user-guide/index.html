@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Builder OS — User Guide</title>
+<title>AI Coding OS — User Guide</title>
 <style>
 :root{--ink:#18202a;--muted:#657181;--line:#dce2e8;--accent:#3157d5;--bg:#f6f8fb}*{box-sizing:border-box}body{margin:0;color:var(--ink);font:16px/1.65 system-ui;background:white}nav{position:fixed;inset:0 auto 0 0;width:250px;padding:28px 22px;background:var(--bg);border-right:1px solid var(--line);overflow:auto}nav strong{font-size:18px}nav a{display:block;color:#465268;text-decoration:none;padding:6px 0}nav a:hover{color:var(--accent)}main{max-width:900px;margin-left:250px;padding:54px 60px 100px}h1{font-size:38px;margin:0}h2{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}h3{margin-top:28px}code{background:#eef1f5;padding:2px 5px;border-radius:4px}pre{background:#17202b;color:#f4f7fb;padding:18px;border-radius:8px;overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid var(--line);padding:10px}.note{padding:14px 18px;border-left:4px solid var(--accent);background:#f2f5ff}@media(max-width:760px){nav{position:static;width:auto}main{margin:0;padding:32px 22px}}
-</style></head><body><nav><strong>AI Builder OS v3.0</strong>
+</style></head><body><nav><strong>AI Coding OS v3.0</strong>
 <a href="#overview">Overview</a><a href="#install">Global installation</a><a href="#init">Project initialization</a><a href="#daily">Daily usage</a><a href="#flows">Workflows and gates</a><a href="#memory">Memory and domain</a><a href="#skills">Skills</a><a href="#upgrade">Upgrade</a><a href="#help">Troubleshooting</a></nav><main>
 <p><a href="index.zh-CN.html">简体中文</a> · <a href="../README.md">README</a></p>
 <h1>User Guide</h1><p>Install the framework globally; keep each project's context local.</p>
-<h2 id="overview">1. Overview</h2><p>AI Builder OS gives multiple coding Agents the same workflows, memory, and human approval rules. It includes the core and five built-in skills.</p>
-<h2 id="install">2. Global installation</h2><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git ~/ai-builder-os
-bash ~/ai-builder-os/installer/install.sh</code></pre><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Builder-OS.git "$HOME\ai-builder-os"
-&amp; "$HOME\ai-builder-os\installer\install.ps1"</code></pre><p>Select Claude Code, Codex, Copilot, Cursor, or Qoder. Node/npm is not required.</p>
-<h2 id="init">3. Project initialization</h2><pre><code>bash ~/ai-builder-os/installer/init.sh /path/to/project</code></pre><p>Creates only .ai/memory, domain, project_docs, the dashboard, and thin adapters; global skills are not copied.</p>
+<h2 id="overview">1. Overview</h2><p>AI Coding OS gives multiple coding Agents the same workflows, memory, and human approval rules. It includes the core and five built-in skills.</p>
+<h2 id="install">2. Global installation</h2><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Coding-OS.git ~/ai-coding-os
+bash ~/ai-coding-os/installer/install.sh</code></pre><pre><code>git clone https://github.com/DOS-AI-Tech/AI-Coding-OS.git "$HOME\ai-coding-os"
+&amp; "$HOME\ai-coding-os\installer\install.ps1"</code></pre><p>Select Claude Code, Codex, Copilot, Cursor, or Qoder. Node/npm is not required.</p>
+<h2 id="init">3. Project initialization</h2><pre><code>bash ~/ai-coding-os/installer/init.sh /path/to/project</code></pre><p>Creates only .ai/memory, domain, project_docs, the dashboard, and thin adapters; global skills are not copied.</p>
 <h2 id="daily">4. Daily usage</h2><ol><li>Open an initialized project and describe one task.</li><li>The Agent reads project memory and selects a workflow.</li><li>Review and confirm the gate.</li><li>After completion, review project_docs, tests, and the task log.</li></ol>
 <h2 id="flows">5. Workflows and gates</h2><table><tr><th>Scenario</th><th>Flow</th></tr><tr><td>New product</td><td>define → scope → architecture → plan → build → test → deliver</td></tr><tr><td>Change</td><td>analyze → decision gate → plan gate → build → verify</td></tr><tr><td>Bug</td><td>reproduce → root cause → fix plan → regression test</td></tr></table>
 <h2 id="memory">6. Memory, domain, and outputs</h2><table><tr><td><code>.ai/memory/</code></td><td>architecture, deployment, current state, work items, logs</td></tr><tr><td><code>domain/</code></td><td>project-specific business knowledge</td></tr><tr><td><code>project_docs/</code></td><td>requirements, architecture, plans, and test evidence</td></tr></table>
 <h2 id="skills">7. Built-in and Advanced Skills</h2><p>Five built-in skills cover requirements, architecture, project management, testing, and deployment. Advanced Skill Packs add domain discovery, business modeling, technical analysis, solution design, and expert review workflows.</p><p>Download: —</p>
-<h2 id="upgrade">8. Upgrade</h2><pre><code>cd ~/ai-builder-os &amp;&amp; git pull
+<h2 id="upgrade">8. Upgrade</h2><pre><code>cd ~/ai-coding-os &amp;&amp; git pull
 bash installer/update.sh</code></pre><p>Global updates do not modify project memory.</p>
 <h2 id="help">9. Troubleshooting</h2><h3>Agent cannot see the framework</h3><p>Run the global installer again, select that Agent, then restart it.</p><h3>Project has no context</h3><p>Run project initialization, then complete frozen memory and domain material.</p>
 </main></body></html>

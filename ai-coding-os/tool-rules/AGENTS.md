@@ -1,7 +1,7 @@
-# AI Builder OS Project Adapter
+# AI Coding OS Project Adapter
 
 ## Global framework
-Use the globally installed `ai-builder-os` skill for every task in this project. Stop and ask the user to install the free framework if it is unavailable.
+Use the globally installed `ai-coding-os` skill for every task in this project. Stop and ask the user to install the free framework if it is unavailable.
 
 ## Project context
 Read project-local `.ai/memory/` in the order defined by the global skill. Treat `domain/`, `project_docs/`, `DASHBOARD.md`, and project rules as project-owned data.

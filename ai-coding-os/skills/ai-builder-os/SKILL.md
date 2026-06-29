@@ -1,18 +1,18 @@
 ---
-name: ai-builder-os
-description: Apply AI Builder Operating System governance to product work, change requests, bug fixes, releases, deployment, and project initialization.
+name: ai-coding-os
+description: Apply AI Coding Operating System governance to product work, change requests, bug fixes, releases, deployment, and project initialization.
 tier: basic
 version: "3.0"
 ---
 
-# AI Builder Operating System
+# AI Coding Operating System
 
-Use this skill as the host framework for all AI Builder OS basic and paid skills.
+Use this skill as the host framework for all AI Coding OS basic and paid skills.
 
 ## Activation
 
 - Activate for every task in a project whose root contains `.ai/memory/`.
-- Activate when the user asks to initialize, bootstrap, upgrade, or use AI Builder OS.
+- Activate when the user asks to initialize, bootstrap, upgrade, or use AI Coding OS.
 - Paid skills must stop if this host skill is unavailable.
 
 ## Task protocol

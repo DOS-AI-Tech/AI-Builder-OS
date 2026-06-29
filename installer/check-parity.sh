@@ -9,11 +9,11 @@
 
 set -e
 
-CLAUDE="ai-builder-os/tool-rules/CLAUDE.md"
-AGENTS="ai-builder-os/tool-rules/AGENTS.md"
-COPILOT="ai-builder-os/tool-rules/copilot-instructions.md"
-CURSOR="ai-builder-os/tool-rules/cursor/workflow-governance.mdc"
-QODER="ai-builder-os/tool-rules/qoder/workflow-governance.md"
+CLAUDE="ai-coding-os/tool-rules/CLAUDE.md"
+AGENTS="ai-coding-os/tool-rules/AGENTS.md"
+COPILOT="ai-coding-os/tool-rules/copilot-instructions.md"
+CURSOR="ai-coding-os/tool-rules/cursor/workflow-governance.mdc"
+QODER="ai-coding-os/tool-rules/qoder/workflow-governance.md"
 
 for f in "$CLAUDE" "$AGENTS" "$COPILOT" "$CURSOR" "$QODER"; do
     [[ -f "$f" ]] || { echo "ERROR: $f not found"; exit 1; }

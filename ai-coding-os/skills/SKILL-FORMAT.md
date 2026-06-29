@@ -1,7 +1,7 @@
 # Skill Format Reference
 
 Every skill entry file is named `SKILL.md` (uppercase) to follow the Agent Skills standard.
-Paid skills must declare `requires: [ai-builder-os]` and cannot run without the free host framework.
+Paid skills must declare `requires: [ai-coding-os]` and cannot run without the free host framework.
 
 A skill is a named, reusable practice — not a role description. Each skill solves one specific problem with a deterministic process. The core virtue is **predictability**: the model follows the same steps every run.
 

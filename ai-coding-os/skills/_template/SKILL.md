@@ -15,7 +15,7 @@ requires: []                    # e.g. [domain-discovery]
 
 <!--
   Pick the pattern that matches your invocation type and delete the others.
-  See ai-builder-os/skills/SKILL-FORMAT.md for full field reference.
+  See ai-coding-os/skills/SKILL-FORMAT.md for full field reference.
 -->
 
 <!-- ═══════════════════════════════════════════════
